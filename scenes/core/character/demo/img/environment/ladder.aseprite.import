@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cekaj7oc1knr5"
+path="res://.godot/imported/ladder.aseprite-e0fbb5b5ca30bf3df876871cf25b18d6.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/img/environment/ladder.aseprite"
+dest_files=["res://.godot/imported/ladder.aseprite-e0fbb5b5ca30bf3df876871cf25b18d6.res"]
+
+[params]
+

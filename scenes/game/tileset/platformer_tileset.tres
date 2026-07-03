@@ -1,0 +1,23 @@
+[gd_resource type="TileSet" format=3 uid="uid://cwgnqbvi8lu1j"]
+
+[ext_resource type="Texture2D" uid="uid://dydgx51cqhgmf" path="res://assets/img/tiles.png" id="1_6t1p5"]
+[ext_resource type="PackedScene" uid="uid://chia0dweg6h8e" path="res://scenes/game/proc_gen/pit_game_over.tscn" id="2_bhrg7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jvun"]
+texture = ExtResource("1_6t1p5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kll74"]
+scenes/1/scene = ExtResource("2_bhrg7")
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2jvun")
+sources/1 = SubResource("TileSetScenesCollectionSource_kll74")

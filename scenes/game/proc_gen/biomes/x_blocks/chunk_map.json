@@ -1,0 +1,105 @@
+{
+  "start": ["chunk_start"],
+  "levels": [
+    {
+      "chunk_1": {
+        "selectable": 1,
+        "repeatable": 1
+      }
+    },
+    {
+      "chunk_1": {
+        "selectable": 1,
+        "repeatable": 1
+      },
+      "chunk_2": {
+        "selectable": 1,
+        "repeatable": 0.5
+      }
+    },
+    {
+      "chunk_1": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_2": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_3": {
+        "selectable": 1,
+        "repeatable": 0.5,
+        "limit": 1,
+        "required": 3,
+        "next_scene": "chunk_1"
+      }
+    },
+    {
+      "chunk_1": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_2": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_3": {
+        "selectable": 1,
+        "repeatable": 0.5,
+        "limit": 1,
+        "required": 3,
+        "next_scene": "chunk_1"
+      }
+    },
+    {
+      "chunk_1": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_2": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_3": {
+        "selectable": 1,
+        "repeatable": 0.5,
+        "limit": 1,
+        "required": 3,
+        "next_scene": "chunk_1"
+      }
+    },
+    {
+      "chunk_1": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_2": {
+        "selectable": 0.5,
+        "repeatable": 0.5,
+        "limit": -1,
+        "required": -1
+      },
+      "chunk_3": {
+        "selectable": 1,
+        "repeatable": 0.5,
+        "limit": 1,
+        "required": 3,
+        "next_scene": "chunk_1"
+      }
+    }
+  ]
+}

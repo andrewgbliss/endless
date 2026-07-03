@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bm1tihwi82o42"]
+
+[ext_resource type="Script" uid="uid://bd4ycw13odro2" path="res://scenes/core/character/character_controller.gd" id="1_2gpxj"]
+[ext_resource type="SpriteFrames" uid="uid://hah67kebsr5d" path="res://assets/img/characters/platformer-character-template.res" id="1_jk1oo"]
+[ext_resource type="Script" uid="uid://cyui75qg7axkc" path="res://scenes/core/state_machine/state_machine_node.gd" id="2_1geth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rso4t"]
+size = Vector2(6, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6bjj"]
+size = Vector2(20, 7)
+
+[node name="SiloBig" type="CharacterBody2D" unique_id=496892240]
+script = ExtResource("1_2gpxj")
+
+[node name="StandingCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116906850]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_rso4t")
+
+[node name="SwimmingCollisionShape2D" type="CollisionShape2D" parent="." unique_id=641893527]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_s6bjj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=38961205]
+sprite_frames = ExtResource("1_jk1oo")
+animation = &"Idle"
+
+[node name="StateMachineNode" type="Node" parent="." unique_id=1084443838]
+script = ExtResource("2_1geth")
+metadata/_custom_type_script = "uid://cyui75qg7axkc"

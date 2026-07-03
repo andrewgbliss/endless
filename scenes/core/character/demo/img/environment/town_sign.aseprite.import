@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bcivdm2buk71u"
+path="res://.godot/imported/town_sign.aseprite-d56c27506dacfc046b30fe56bbff3b33.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/img/environment/town_sign.aseprite"
+dest_files=["res://.godot/imported/town_sign.aseprite-d56c27506dacfc046b30fe56bbff3b33.res"]
+
+[params]
+

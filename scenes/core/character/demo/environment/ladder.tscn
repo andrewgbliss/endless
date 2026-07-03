@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b3v7u2u55pdk6"]
+
+[ext_resource type="Script" uid="uid://chyqpqbtf206s" path="res://scenes/core/character/areas/hurtbox.gd" id="1_8dqym"]
+[ext_resource type="Texture2D" uid="uid://bec24o4kf33vv" path="res://scenes/core/character/demo/img/environment/ladder.png" id="2_8dqym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(16, 16)
+
+[node name="Ladder" type="Area2D" unique_id=2059014418]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_8dqym")
+metadata/_custom_type_script = "uid://chyqpqbtf206s"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552983247]
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="Ladder" type="Sprite2D" parent="." unique_id=1370775566]
+texture = ExtResource("2_8dqym")

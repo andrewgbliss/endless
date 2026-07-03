@@ -1,0 +1,34 @@
+{
+  "levels": [
+	{
+	  "chunk_1": {
+		"selectable": 1,
+		"repeatable": 1
+	  }
+	},
+	{
+	  "chunk_1": {
+		"selectable": 1,
+		"repeatable": 1
+	  }
+	},
+	{
+	  "chunk_1": {
+		"selectable": 1,
+		"repeatable": 1
+	  }
+	},
+	{
+	  "chunk_1": {
+		"selectable": 1,
+		"repeatable": 1
+	  }
+	},
+	{
+	  "chunk_1": {
+		"selectable": 1,
+		"repeatable": 1
+	  }
+	}
+  ]
+}

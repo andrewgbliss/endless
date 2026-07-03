@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cvnk6ji7qw3si"]
+
+[ext_resource type="Script" uid="uid://bd4ycw13odro2" path="res://scenes/core/character/character_controller.gd" id="1_dmcgn"]
+[ext_resource type="Resource" uid="uid://ce4eave64mtx2" path="res://scenes/core/character/demo/characters/resources/player_sheet.tres" id="2_lho7s"]
+[ext_resource type="Resource" uid="uid://bjv4mscac28wi" path="res://scenes/core/character/demo/characters/resources/player_blackboard.tres" id="3_14w1c"]
+[ext_resource type="Texture2D" uid="uid://caqsmof0dr4dm" path="res://assets/img/ball-Sheet.png" id="3_g7505"]
+[ext_resource type="PackedScene" uid="uid://bymd05usws7dt" path="res://scenes/game/characters/trail.tscn" id="3_hx28b"]
+[ext_resource type="Script" uid="uid://b2fb041j3qha3" path="res://scenes/core/character/input/player_input.gd" id="6_xp3x1"]
+[ext_resource type="Script" uid="uid://cyui75qg7axkc" path="res://scenes/core/character/state_machine/type/state_machine_platformer.gd" id="7_lho7s"]
+[ext_resource type="Script" uid="uid://bpinqrmdjpx1w" path="res://scenes/core/character/character_debug_label.gd" id="8_14w1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajtct"]
+radius = 8.062258
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_774tr"]
+atlas = ExtResource("3_g7505")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmcgn"]
+atlas = ExtResource("3_g7505")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lho7s"]
+atlas = ExtResource("3_g7505")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14w1c"]
+atlas = ExtResource("3_g7505")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_774tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmcgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lho7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14w1c")
+}],
+"loop": 1,
+"name": &"rolling",
+"speed": 12.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=949968589 node_paths=PackedStringArray("input")]
+script = ExtResource("1_dmcgn")
+character_sheet = ExtResource("2_lho7s")
+blackboard = ExtResource("3_14w1c")
+input = NodePath("PlayerInput")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364019680]
+shape = SubResource("CircleShape2D_ajtct")
+metadata/_edit_group_ = true
+
+[node name="Trail" parent="." unique_id=991964464 instance=ExtResource("3_hx28b")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928653853]
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+animation = &"rolling"
+autoplay = "rolling"
+frame_progress = 0.8411001
+
+[node name="PlayerInput" type="Node2D" parent="." unique_id=1131037008]
+script = ExtResource("6_xp3x1")
+metadata/_custom_type_script = "uid://b2fb041j3qha3"
+
+[node name="StateMachinePlatformer" type="Node" parent="." unique_id=548553018]
+script = ExtResource("7_lho7s")
+metadata/_custom_type_script = "uid://cyui75qg7axkc"
+
+[node name="CharacterDebugLabel" type="Label" parent="." unique_id=559254658]
+visible = false
+offset_left = 16.0
+offset_top = -34.0
+offset_right = 56.0
+offset_bottom = -11.0
+script = ExtResource("8_14w1c")
+metadata/_custom_type_script = "uid://bpinqrmdjpx1w"

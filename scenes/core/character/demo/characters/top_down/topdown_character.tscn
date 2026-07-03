@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cu3emobv5srct"]
+
+[ext_resource type="Script" uid="uid://bd4ycw13odro2" path="res://scenes/core/character/character_controller.gd" id="1_ktwln"]
+[ext_resource type="Resource" uid="uid://ce4eave64mtx2" path="res://scenes/core/character/demo/characters/resources/player_sheet.tres" id="2_6im4b"]
+[ext_resource type="Resource" uid="uid://co7vrcv6fght4" path="res://scenes/core/character/demo/characters/resources/player_block_blackboard.tres" id="3_tgpsv"]
+[ext_resource type="Script" uid="uid://b2fb041j3qha3" path="res://scenes/core/character/input/player_input.gd" id="4_6tfg8"]
+[ext_resource type="Script" uid="uid://bhq0i8srsi1nx" path="res://scenes/core/character/state_machine/type/state_machine_topdown.gd" id="5_63sjt"]
+[ext_resource type="Shader" uid="uid://dps3jiwx8svha" path="res://scenes/core/character/demo/shaders/pulse.gdshader" id="5_tgpsv"]
+[ext_resource type="SpriteFrames" uid="uid://b070aqggm06es" path="res://scenes/core/character/demo/img/characters/topdown-character-template.res" id="6_6tfg8"]
+[ext_resource type="Script" uid="uid://bpinqrmdjpx1w" path="res://scenes/core/character/character_debug_label.gd" id="6_y15uu"]
+[ext_resource type="Script" uid="uid://dl5hc4wbxjy5u" path="res://scenes/core/character/character_flip.gd" id="9_6tfg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(16, 15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63sjt"]
+shader = ExtResource("5_tgpsv")
+shader_parameter/shine_color = Color(1, 0, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 1.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[node name="TopCharacter" type="CharacterBody2D" unique_id=595983479 node_paths=PackedStringArray("input")]
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_ktwln")
+character_sheet = ExtResource("2_6im4b")
+blackboard = ExtResource("3_tgpsv")
+input = NodePath("PlayerInput")
+metadata/_custom_type_script = "uid://bd4ycw13odro2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219214542]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="PlayerInput" type="Node2D" parent="." unique_id=1901056540]
+script = ExtResource("4_6tfg8")
+metadata/_custom_type_script = "uid://b2fb041j3qha3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=779997023]
+material = SubResource("ShaderMaterial_63sjt")
+sprite_frames = ExtResource("6_6tfg8")
+animation = &"IdleDown"
+
+[node name="StateMachineTopDown" type="Node" parent="." unique_id=718884650]
+script = ExtResource("5_63sjt")
+animation_states = Dictionary[String, String]({
+"IdleState": "Idle",
+"PushIdleState": "Idle",
+"PushState": "Walk",
+"RunState": "Walk",
+"SpawnState": "Idle",
+"WalkState": "Walk"
+})
+metadata/_custom_type_script = "uid://bhq0i8srsi1nx"
+
+[node name="CharacterDebugLabel" type="Label" parent="." unique_id=266304468]
+offset_left = 17.0
+offset_top = -53.0
+offset_right = 57.0
+offset_bottom = -30.0
+theme_override_constants/line_spacing = 0
+text = "State"
+script = ExtResource("6_y15uu")
+metadata/_custom_type_script = "uid://bpinqrmdjpx1w"
+
+[node name="CharacterFlip" type="Node2D" parent="." unique_id=596524719]
+script = ExtResource("9_6tfg8")
+metadata/_custom_type_script = "uid://dl5hc4wbxjy5u"

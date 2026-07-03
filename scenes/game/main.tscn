@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://c5htme08v5rox"]
 
-[ext_resource type="Texture2D" uid="uid://comk4qocvrfam" path="res://assets/img/sky.png" id="1_uaf1y"]
+[ext_resource type="Texture2D" uid="uid://duav5sksvdggi" path="res://assets/img/black_sky.png" id="1_iba00"]
+[ext_resource type="Script" uid="uid://d30ix6scfuy8j" path="res://scenes/game/main.gd" id="1_j7lav"]
 [ext_resource type="Texture2D" uid="uid://5m70w1h41m00" path="res://assets/img/clouds.png" id="2_iba00"]
-[ext_resource type="PackedScene" uid="uid://cvnk6ji7qw3si" path="res://scenes/game/player.tscn" id="3_j7lav"]
-[ext_resource type="Script" uid="uid://clm5w325abe88" path="res://scenes/core/proc_gen/biome_tile_repeater.gd" id="4_g38uy"]
+[ext_resource type="PackedScene" uid="uid://cvnk6ji7qw3si" path="res://scenes/game/characters/player.tscn" id="3_j7lav"]
+[ext_resource type="Texture2D" uid="uid://ke3jx3jlhl8c" path="res://assets/img/light_mask.png" id="4_iba00"]
+[ext_resource type="Script" uid="uid://b17f4tf7s16x0" path="res://scenes/core/proc_gen/proc_gen_chunker.gd" id="4_uaf1y"]
+
+[sub_resource type="Environment" id="Environment_u0ya7"]
+background_mode = 3
+glow_enabled = true
 
 [node name="Main" type="Node2D" unique_id=2140350316]
+script = ExtResource("1_j7lav")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2092202734]
+z_index = -100
 repeat_size = Vector2(320, 180)
 repeat_times = 12
 
 [node name="Sky" type="Sprite2D" parent="Parallax2D" unique_id=1150648678]
-texture = ExtResource("1_uaf1y")
+texture = ExtResource("1_iba00")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=704276639]
+visible = false
+z_index = -50
 repeat_size = Vector2(320, 0)
 autoscroll = Vector2(-10, 0)
 repeat_times = 12
@@ -23,17 +33,33 @@ repeat_times = 12
 position = Vector2(0, -98)
 texture = ExtResource("2_iba00")
 
-[node name="Player" parent="." unique_id=949968589 instance=ExtResource("3_j7lav")]
-position = Vector2(0, -80)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=36368057]
+position = Vector2(92, -56)
+zoom = Vector2(1.5, 1.5)
+
+[node name="ProcGenChunker" type="Node2D" parent="." unique_id=614723591 node_paths=PackedStringArray("player")]
+script = ExtResource("4_uaf1y")
+player = NodePath("../Player")
+metadata/_custom_type_script = "uid://b17f4tf7s16x0"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1797299321]
+environment = SubResource("Environment_u0ya7")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1894938755]
+color = Color(0.6872149, 0.68721503, 0.6872149, 1)
+
+[node name="SpawnPos" type="Node2D" parent="." unique_id=194841773]
+position = Vector2(94, -50)
+
+[node name="Player" parent="." unique_id=949968589 node_paths=PackedStringArray("spawn_position") instance=ExtResource("3_j7lav")]
+position = Vector2(92, -56)
+spawn_position = NodePath("../SpawnPos")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1567421068]
 remote_path = NodePath("../../Camera2D")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=36368057]
-position = Vector2(0, -80)
-zoom = Vector2(0.5, 0.5)
-limit_bottom = 100
-
-[node name="BiomeTileRepeater" type="Node2D" parent="." unique_id=509472090 node_paths=PackedStringArray("player")]
-script = ExtResource("4_g38uy")
-player = NodePath("../Player")
+[node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=123546336]
+color = Color(1.8247963, 0.62994397, 0.2735844, 1)
+shadow_enabled = true
+texture = ExtResource("4_iba00")
+texture_scale = 3.38

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dgw73imrwsght"]
+
+[ext_resource type="Script" uid="uid://bd4ycw13odro2" path="res://scenes/core/character/character_controller.gd" id="1_38l4v"]
+[ext_resource type="Resource" uid="uid://ce4eave64mtx2" path="res://scenes/core/character/demo/characters/resources/player_sheet.tres" id="2_4vlf8"]
+[ext_resource type="Resource" uid="uid://co7vrcv6fght4" path="res://scenes/core/character/demo/characters/resources/player_block_blackboard.tres" id="2_34rue"]
+[ext_resource type="Script" uid="uid://b2fb041j3qha3" path="res://scenes/core/character/input/player_input.gd" id="2_o8s35"]
+[ext_resource type="Script" uid="uid://bhq0i8srsi1nx" path="res://scenes/core/character/state_machine/type/state_machine_topdown.gd" id="4_877ag"]
+[ext_resource type="Script" uid="uid://bpinqrmdjpx1w" path="res://scenes/core/character/character_debug_label.gd" id="6_wo3ms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(16, 15)
+
+[sub_resource type="Gradient" id="Gradient_877ag"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u0ya7"]
+gradient = SubResource("Gradient_877ag")
+width = 16
+
+[node name="BlockCharacter" type="CharacterBody2D" unique_id=595983479 node_paths=PackedStringArray("input")]
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_38l4v")
+character_sheet = ExtResource("2_4vlf8")
+blackboard = ExtResource("2_34rue")
+input = NodePath("PlayerInput")
+metadata/_custom_type_script = "uid://bd4ycw13odro2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219214542]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024418305]
+position = Vector2(0, -0.50000095)
+scale = Vector2(1, 15)
+texture = SubResource("GradientTexture1D_u0ya7")
+
+[node name="PlayerInput" type="Node2D" parent="." unique_id=1901056540]
+script = ExtResource("2_o8s35")
+metadata/_custom_type_script = "uid://b2fb041j3qha3"
+
+[node name="StateMachineTopDown" type="Node" parent="." unique_id=718884650]
+script = ExtResource("4_877ag")
+metadata/_custom_type_script = "uid://bhq0i8srsi1nx"
+
+[node name="CharacterDebugLabel" type="Label" parent="." unique_id=266304468]
+offset_left = 17.0
+offset_top = -53.0
+offset_right = 57.0
+offset_bottom = -30.0
+theme_override_constants/line_spacing = 0
+text = "State"
+script = ExtResource("6_wo3ms")
+metadata/_custom_type_script = "uid://bpinqrmdjpx1w"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://djut6y34atpqr"
+path="res://.godot/imported/tilemap-water-grass-topdown.aseprite-4f1470d65ff9c4616608af7e24ad275c.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/img/tilesets/tilemap-water-grass-topdown.aseprite"
+dest_files=["res://.godot/imported/tilemap-water-grass-topdown.aseprite-4f1470d65ff9c4616608af7e24ad275c.res"]
+
+[params]
+

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bymd05usws7dt"]
+
+[ext_resource type="Script" uid="uid://cnbt2nmwyp5gj" path="res://scenes/game/characters/trail.gd" id="1_af6gu"]
+
+[sub_resource type="Curve" id="Curve_erkgt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_folo1"]
+offsets = PackedFloat32Array(0, 0.6818182, 0.7933884, 0.8677686, 0.946281)
+colors = PackedColorArray(0, 0, 0, 0, 0.5876927, 0.5876927, 0, 0.27484632, 1.0165495, 1.0165495, 0, 0.47540987, 2.1382592, 2.1382592, 0, 1, 1.9810296, 2.0017958, 1.3929932, 1)
+
+[node name="Trail" type="Line2D" unique_id=991964464]
+top_level = true
+z_index = -2
+points = PackedVector2Array(-44, -1, -29.4306, -0.337757, -19.5118, 0.113098, -9.55701, 0.565586, 0, 1)
+width = 14.0
+width_curve = SubResource("Curve_erkgt")
+gradient = SubResource("Gradient_folo1")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("1_af6gu")

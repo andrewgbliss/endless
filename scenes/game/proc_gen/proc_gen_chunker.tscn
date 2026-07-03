@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3g8hhdu65m6f"]
+
+[ext_resource type="Script" uid="uid://b17f4tf7s16x0" path="res://scenes/core/proc_gen/proc_gen_chunker.gd" id="1_tu8sn"]
+
+[node name="ProcGenChunker" type="Node2D" unique_id=343203228]
+script = ExtResource("1_tu8sn")
+metadata/_custom_type_script = "uid://b17f4tf7s16x0"

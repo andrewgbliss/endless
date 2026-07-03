@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CharacterBlackboard" format=3 uid="uid://bjv4mscac28wi"]
+
+[ext_resource type="Script" uid="uid://bt88abjltis4c" path="res://scenes/core/character/character_blackboard.gd" id="1_m2atb"]
+
+[resource]
+script = ExtResource("1_m2atb")
+can_crouch = false
+can_dash = false
+can_push = false
+can_roll = false
+can_slide = false
+can_wall_cling = false
+can_wall_jump = false
+can_punch = false
+can_kick = false
+can_up_thrust = false
+up_thrust_force = 350.0
+can_down_thrust_jump = false
+down_thrust_force = 350.0
+can_smash_down = false
+smash_down_force = 400.0
+can_attack_left_trigger = false
+can_attack_right_trigger = false
+can_attack_left_bumper = false
+can_attack_right_bumper = false
+metadata/_custom_type_script = "uid://bt88abjltis4c"

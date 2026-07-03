@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dsrhuiv3rheoo"
+path="res://.godot/imported/platformer-small-character-template.aseprite-6b33817b7dc5f8229a8dba144e4fe981.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/img/characters/platformer-small-character-template.aseprite"
+dest_files=["res://.godot/imported/platformer-small-character-template.aseprite-6b33817b7dc5f8229a8dba144e4fe981.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://chle0dy0heegu"
+path="res://.godot/imported/InventoryUI.aseprite-43dbc1c17be1a640356d3841ec950be5.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/ui/InventoryUI.aseprite"
+dest_files=["res://.godot/imported/InventoryUI.aseprite-43dbc1c17be1a640356d3841ec950be5.res"]
+
+[params]
+

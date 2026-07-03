@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dnhobqrvyb84e"
+path="res://.godot/imported/platformer-tiles.aseprite-073363a84a8ecdb1ba8e7301e29c5cdb.res"
+
+[deps]
+
+source_file="res://scenes/core/character/demo/tilesets/platformer-tiles.aseprite"
+dest_files=["res://.godot/imported/platformer-tiles.aseprite-073363a84a8ecdb1ba8e7301e29c5cdb.res"]
+
+[params]
+
